@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const MentorDetail = () => {
-  const { id } = useParams(); // Mengambil ID dari URL
+  const { id } = useParams(); // Get ID from URL
   const [mentor, setMentor] = useState(null);
-  const navigate = useNavigate(); // Menambahkan useNavigate untuk navigasi
+  const navigate = useNavigate(); // Use navigate for navigation
 
   useEffect(() => {
     const fetchMentor = async () => {
@@ -21,12 +21,17 @@ const MentorDetail = () => {
       <div className="flex justify-center items-center min-h-screen">
         <p className="text-2xl font-bold text-gray-600">Loading...</p>
       </div>
-    ); // Menampilkan loading state saat data sedang diambil
+    ); // Show loading state while data is being fetched
   }
 
-  // Fungsi untuk handle ketika klik hire
+  // Function to handle hire click
   const handleHire = () => {
-    navigate('/payment', { state: { mentor } }); // Meneruskan data mentor ke halaman payment
+    const storedUser = localStorage.getItem('user'); // Check local storage for user data
+    if (!storedUser) {
+      navigate('/login'); // Redirect to login page if user is not logged in
+    } else {
+      navigate('/payment', { state: { mentor } }); // Navigate to payment page with mentor data
+    }
   };
 
   return (

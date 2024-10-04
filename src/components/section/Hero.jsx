@@ -1,6 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 function Hero() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  // Function to handle button click
+  const handleFindMentor = () => {
+    navigate("/mentors"); // Redirect to the mentors page
+  };
+
   return (
     <div className="text-main-900 min-h-screen flex flex-col items-center justify-center">
       <div className="absolute flex items-center justify-center">
@@ -13,7 +21,10 @@ function Hero() {
 
         {/* Buttons Section */}
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <button className="px-8 py-3 bg-main-800 rounded-md text-white hover:bg-main-950 transition duration-300">
+          <button 
+            onClick={handleFindMentor} // Add onClick handler
+            className="px-8 py-3 bg-main-800 rounded-md text-white hover:bg-main-950 transition duration-300"
+          >
             Cari Mentor
           </button>
         </div>
