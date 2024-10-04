@@ -12,6 +12,8 @@ import ArticlePage from './pages/ArticlePage';
 import DetailMentor from './pages/DetailMentor';
 import Payment from './components/section/Payment';
 import Chat from './pages/ChatPage';
+import Login from './pages/LoginPage';
+import Register from './pages/RegsiterPage';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/articles" element={<ArticlePage />} /> {/* Gunakan element */}
           <Route path="/payment" element={<Payment />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path='/login' element={<Login/>} />
+          <Route path='/register' element={<Register />} />
         </Routes>
       </>
     </Router>
