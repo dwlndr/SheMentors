@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+nav {
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.2vw 5vw;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transition: max-height 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  nav ul {
+    display: flex; /* Menampilkan menu dalam baris di layar lebih besar */
+  }
+}
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e61841;
+}
+
+
+nav a.active {
+  font-weight: bold; /* Menebalkan teks untuk tautan aktif */
+  color: #e61841; /* Ubah warna teks untuk tautan aktif */
+}
+
+input[type="text"] {
+  border: 1px solid #8b10355c;
+  border-radius: 16px;
+  padding: 8px 16px;
+  outline: none;
+  width: 18vw;
+  color: #8b1035;
+}
+
+input[type="text"]:focus {
+  border-color: #8b1034;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+button {
+  border-radius: 40px;
+  padding: 8px 26px;
+  cursor: pointer;
+}
